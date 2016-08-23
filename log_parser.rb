@@ -11,6 +11,9 @@ class LogfileParser
                               /method=GET path=\/api\/users\/\d+ (.*)/
                              ])
     def initialize
+        '''
+        Initialize final_hash and open log file.
+        '''
         @log = File.open('./sample.log')
         @final_hash = Hash.new(0)
 
