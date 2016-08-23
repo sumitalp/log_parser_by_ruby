@@ -6,5 +6,8 @@ This is only test based, I created by my own interest in ruby. There are more op
 ### Run command
 `ruby log_parser.rb` (No arguments has taken from command line)
 
+### Test command
+`ruby tests/test_log_parser.rb`
+
 ### Output
 Find mean, median and mode of sample urls
