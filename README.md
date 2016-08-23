@@ -1,7 +1,7 @@
 # log_parser_by_ruby
 
 ## Sample Log Parser by Ruby Language
-This is only test based, I created by my own interest in ruby. There are more option to improve.
+This is only test based, I created by my own interest in ruby. There are more option to improve. I used **Ruby 2.0.0**.
 
 ### Run command
 `ruby log_parser.rb` (No arguments has taken from command line)

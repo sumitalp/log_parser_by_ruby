@@ -114,6 +114,8 @@ class LogfileParser
         '''
         self.prepare_hash
 
+        line_num = 0
+        puts '********** Start Output **********'
         @final_hash.each do |key, value|
             path = value['path']
             total_hit = value['dyno'].length
@@ -128,12 +130,13 @@ class LogfileParser
             url_mode = url_mode.chomp(',')
 
             if total_hit > 0
-                puts "'#{path}' url called #{total_hit} times, mean=#{url_mean}, median=#{url_median} and mode(s)=#{url_mode}. Most frequent dyno(s)='#{url_dyno}'"
+                puts "#{line_num +=1}. '#{path}' url called #{total_hit} times, mean=#{url_mean}, median=#{url_median} and mode(s)=#{url_mode}. Most frequent dyno(s)='#{url_dyno}'"
             else
-                puts "'#{path}' did not call by users"
+                puts "#{line_num +=1}. '#{path}' did not call by users"
             end
 
         end
+        puts '********** End Output **********'
     end
 
     def file_exists?
