@@ -1,3 +1,4 @@
+# require "benchmark"
 require './math_utils'
 
 class LogfileParser
@@ -112,7 +113,7 @@ class LogfileParser
         This method is responsible to print output at console
         '''
         self.prepare_hash
-        
+
         @final_hash.each do |key, value|
             path = value['path']
             total_hit = value['dyno'].length
@@ -139,6 +140,15 @@ class LogfileParser
         File.exist?('./sample.log')
     end
 end
+
+# Benchmark.bm(7) do |x|
+#   x.report(){
+#       parser = LogfileParser.new
+#
+#       parser.get_results
+#   }
+#
+# end
 
 parser = LogfileParser.new
 
